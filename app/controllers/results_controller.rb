@@ -20,12 +20,8 @@ class ResultsController < ApplicationController
   end
 
   def results
-
     response = Unirest.get("https://api.sportradar.us/soccer-t3/eu/en/schedules/2018-04-01/results.json?api_key=7v67xcs28wetuawtw8ybw9tw")
-
     data = response.body
-
     render json: data
-
   end
 end
