@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-// import { render } from "react-dom";
-// import { makeData, Logo, Tips } from "./utils";
-
-// Import React Table
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
-import axios from 'axios';
 
 const columns = [
       {
@@ -214,54 +209,29 @@ const venue = [
       }
     ];
 
-// "sport_event_status": {
-// "status": "closed",
-// "match_status": "ended",
-// "home_score": 0,
-// "away_score": 0,
-// "period_scores": [
-// {
-// "home_score": 0,
-// "away_score": 0,
-// "type": "regular_period",
-// "number": 1
-// },
-// {
-// "home_score": 0,
-// "away_score": 0,
-// "type": "regular_period",
-// "number": 2
-// }
-// ]
-// }
-
 const period_scores = [
       {
         Header: "Period Scores",
         columns: [
           {
             Header: "Home Score",
-            accessor: "sport_event_status.period_scores.home_score"
+            accessor: "sport_event_status.period_scores[0].home_score"
           },
           {
             Header: "Away Score",
-            accessor: "sport_event_status.period_scores.away_score"
+            accessor: "sport_event_status.period_scores[0].away_score"
           },
           {
             Header: "Type",
-            accessor: "sport_event_status.period_scores.type"
+            accessor: "sport_event_status.period_scores[0].type"
           },
           {
             Header: "Number",
-            accessor: "sport_event_status.period_scores.number"
+            accessor: "sport_event_status.period_scores[0].number"
           }
         ]
       }
     ];
-
-
-
-
 
 class Table extends Component {
 
